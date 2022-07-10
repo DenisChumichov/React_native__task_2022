@@ -3,13 +3,13 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Table as BaseTable, Row, Rows } from 'react-native-table-component';
 import { tableDataConverter, upperFirstSymbol } from '../services/utils';
 
-const Table = ({ content, activeColumns }) => {
+const Table = ({ content, columnsMeta }) => {
   return (
     <BaseTable borderStyle={styles.borderStyle}>
       <Row
-        data={activeColumns.map((item) => upperFirstSymbol(item))}
+        data={columnsMeta.map((item) => item.title)}
         style={styles.head}
-        textStyle={[styles.headText, styles.text]}
+        textStyle={styles.headText}
       />
       <Rows data={tableDataConverter(content)} style={styles.body} textStyle={styles.text} />
     </BaseTable>
@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
   },
   headText: {
     fontWeight: 'bold',
+    textAlign: 'center',
   },
   text: {
     textAlign: 'center',

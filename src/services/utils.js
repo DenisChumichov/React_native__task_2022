@@ -1,3 +1,9 @@
 export const tableDataConverter = (data) => data.map((row) => Object.values(row));
 
-export const upperFirstSymbol = (str) => str[0].toUpperCase() + str.slice(1);
+export const searchAtList = (array, searchText) => {
+  return array.filter((item) => {
+    if (String(item.title).toUpperCase().includes(searchText.toUpperCase())) {
+      return item;
+    }
+  });
+};
