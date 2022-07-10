@@ -1,2 +1,2 @@
 export const cars = (state) => state.cars;
-export const activeColumns = (state) => state.activeColumns;
+export const columnsMeta = (state) => state.columnsMeta;
